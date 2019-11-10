@@ -8,32 +8,35 @@ https://github.com/udacity/deep-reinforcement-learning
 
 ### Environment
 
-![Reacher](https://video.udacity-data.com/topher/2018/June/5b1ea778_reacher/reacher.gif)
+![Tennis](https://video.udacity-data.com/topher/2018/May/5af7955a_tennis/tennis.png)
 
-Please refer to [Reacher](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#reacher) for details.
+Please refer to [Tennis](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#tennis) for details.
+
 
 ### Reward
 
-In this environment, a double-jointed arm can move to target locations. A reward of +0.1 is provided for each step that the agent's hand is in the goal location. Thus, the goal of your agent is to maintain its position at the target location for as many time steps as possible.
+In this environment, two agents control rackets to bounce a ball over a net. 
+If an agent hits the ball over the net, it receives a reward of +0.1. 
+If an agent lets a ball hit the ground or hits the ball out of bounds, it receives a reward of -0.01. 
+Thus, the goal of each agent is to keep the ball in play.
 
 ### State space
 
-The observation space consists of 33 variables corresponding to position, rotation, velocity, and angular velocities of the arm. 
+The observation space consists of 8 variables corresponding to the position and velocity of the ball and racket. 
+Each agent receives its own, local observation. 
 
 ### Action spaces
 
-Each action is a vector with four numbers, corresponding to torque applicable to two joints. Every entry in the action vector should be a number between -1 and 1.
+Two continuous actions are available, corresponding to movement toward (or away from) the net, and jumping.
 
 ### Training end condition - when the environment is considered solved
 
-#### Option 1
-The task is episodic, and in order to solve the environment, your agent must get an average score of +30 over 100 consecutive episodes.
+The task is episodic, and in order to solve the environment, your agents must get an average score of +0.5 (over 100 consecutive episodes, after taking the maximum over both agents). Specifically,
 
-#### Option 2
-The barrier for solving the second version of the environment is slightly different, to take into account the presence of many agents. In particular, your agents must get an average score of +30 (over 100 consecutive episodes, and over all agents). Specifically,
+- After each episode, we add up the rewards that each agent received (without discounting), to get a score for each agent. This yields 2 (potentially different) scores. We then take the maximum of these 2 scores.
+- This yields a single score for each episode.
 
-- After each episode, we add up the rewards that each agent received (without discounting), to get a score for each agent. This yields 20 (potentially different) scores. We then take the average of these 20 scores.
-- This yields an average score for each episode (where the average is over all 20 agents).
+The environment is considered solved, when the average (over 100 episodes) of those scores is at least +0.5.
 
 ## Getting Started
 
@@ -53,29 +56,17 @@ conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
 
 ### Unity Environment
 
-#### Version 1: One (1) Agent
-- Linux: click [here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Linux.zip)
-- Mac OSX: click [here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher.app.zip)
-- Windows (32-bit): [here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Windows_x86.zip)
-- Windows (64-bit): [here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Windows_x86_64.zip)
 #### Version 2: Twenty (20) Agents
-- Linux: click [here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Linux.zip)
-- Mac OSX: click [here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher.app.zip)
-- Windows (32-bit): [here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86.zip)
-- Windows (64-bit): [here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86_64.zip)
+- Linux: click [here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Linux.zip)
+- Mac OSX: click [here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis.app.zip)
+- Windows (32-bit): [here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Windows_x86.zip)
+- Windows (64-bit): [here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Windows_x86_64.zip)
 
 ## Instructions
 
-Please refer to the following notebooks for the instructions. Option 2 has the final result.
+Please refer to the following notebooks for the instructions.
 
-### Option 1
+Refer to [Tennis.ipynb](./Tennis.ipynb)
 
-Refer to [Continuous_Control_single.ipynb](./Continuous_Control_single.ipynb)
 
-### Option 2
-
-Refer to [Continuous_Control_multi.ipynb](./Continuous_Control_multi.ipynb)
-
-## (Optional) Build your Own Environment
-If you are interested in learning to build your own Unity environments, you are encouraged to follow the instructions [here](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Getting-Started-with-Balance-Ball.md), which walk you through all of the details of building an environment from a Unity scene.
 
