@@ -23,7 +23,7 @@
 |LR_CRITIC | 31e-4               | learning rate of the critic |
 |WEIGHT_DECAY | 0.0001        | L2 weight decay |
 
-#### OU Noise
+### OU Noise
 
 Ornstein-Uhlenbeck process.
 
@@ -45,10 +45,17 @@ Ornstein-Uhlenbeck process.
 
 #### Actor
 
-
+- Linear(in:state size, out:256)
+- Linear(in:256, out:256)
+- Linear(in:256, out:256)
+- Linear(in:256, out:action size)
 
 #### Critic
 
+- Linear(in:state size, out:256)
+- Linear(in:256 + action size, out:256)
+- Linear(in:256, out:256)
+- Linear(in:256, out:1)
 
 
 ## Plot of Rewards
