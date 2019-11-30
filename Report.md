@@ -68,25 +68,25 @@ The agents got an average score of +0.5 (over 100 consecutive episodes, after ta
 
 ## Project History
 
-### First Attempt: 
+### First Attempt: Multi agent DDPC modification
 First, I tried to utilize the implementation from 15. MADDPGLab of Lesson 2 Introduction to Multi-Agent RL.
 
 [Tennis_first_attempt.ipynb](./Tennis_first_attempt.ipynb)
 Although I managed to run it after I modified, the multi agent DDPG never learn at all.
 
-### Second Attempt: Original Implementation of multi agent DDPG
+### Second Attempt: Original implementation of multi agent DDPG
 Then, I implemented my version of multi agent DDPG based on DDPG for Project 2.
 It did not seem to work as expected.
 
 ### Third Attempt: "simple" DDPG
-With the , I checked some Knowledge articles and got an idea from my mentor, I saw that multi agent DDPG was not necessarily needed for this project.
+With the dissapointed result, I checked some Knowledge articles and heard my mentor's ideas. Then, I saw that multi agent DDPG was not necessarily needed for this project.
 I managed to realize a meaningful result with using two agents, which are ported from Project 2.
 
 [Tennis_simple.ipynb](./Tennis_simple.ipynb)
 
-### Last Attempt:
+### Last Attempt: Parameter tuning of multi agent DDPG
 
-After the third attempt, I realized that the values of some parameters were different between the second (and first) attempt and the successful third attempt. So I used the values of the DDPG versiont for the multi-agent DDPG.
+After the third attempt, I realized that the values of some parameters were different between the second (and first) attempt and the successful third attempt. So I tried the values of the DDPG versiont for the multi-agent DDPG.
 Finally, I faced a successfull result, which is far better than the simple version.
 
 ## Remarks
